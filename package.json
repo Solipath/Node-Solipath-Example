@@ -1,0 +1,36 @@
+{
+  "name": "node",
+  "version": "1.0.0",
+  "description": "Node examples using TypeScript",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest",
+    "lint": "tslint --config tslint.json --project ."
+  },
+  "contributors": [
+    {
+      "name": "Mohamed Hegazy",
+      "url": "https://github.com/mhegazy"
+    },
+    {
+      "name": "Lucas de Almeida Carotta",
+      "url": "https://github.com/Fazendaaa"
+    }
+  ],
+  "devDependencies": {
+    "@types/jest": "^26.0.20",
+    "@types/node": "^10.11.4",
+    "jest": "^26.6.3",
+    "ts-jest": "^26.5.2",
+    "ts-node": "^7.0.1",
+    "tslint": "^5.11.0",
+    "tslint-microsoft-contrib": "^5.2.1",
+    "typescript": "^3.1.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-push": "npm run lint"
+    }
+  },
+  "dependencies": {}
+}
