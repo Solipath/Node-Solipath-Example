@@ -7,24 +7,5 @@ on:
   workflow_dispatch:
 jobs:
   build:
+    uses: Solipath/Node-Solipath-Example/.github/workflows/_build.yml@main
 
-    runs-on: ${{matrix.os}}
-
-    strategy: 
-      matrix:
-        include:
-          - os: macos-latest
-            commandInstall: ./solipath npm install
-            commandTest: ./solipath npm test
-          - os: ubuntu-latest
-            commandInstall: ./solipath npm install
-            commandTest: ./solipath npm test
-          - os: windows-latest
-            commandInstall: .\solipath npm install
-            commandTest: .\solipath npm test
-    steps:
-    - uses: actions/checkout@v2
-    - name: Install dependencies
-      run: ${{matrix.commandInstall}}
-    - name: Run tests
-      run: ${{matrix.commandTest}}
